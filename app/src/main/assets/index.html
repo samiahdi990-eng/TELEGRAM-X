@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<title>TELEGRAM-X</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+background:#101827;
+color:#fff;
+font-family:Tahoma,Arial,sans-serif;
+}
+header{
+padding:20px 17px;
+background:linear-gradient(120deg,#172b50,#263f78);
+border-radius:0 0 25px 25px;
+}
+.top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.logo{
+font-size:23px;
+font-weight:bold;
+letter-spacing:1px;
+}
+.logo span{color:#5bc6ff}
+.icon{
+background:#ffffff17;
+border:0;
+color:white;
+padding:10px;
+border-radius:13px;
+font-size:19px;
+}
+.search{
+margin-top:22px;
+background:#ffffff15;
+padding:14px;
+border-radius:15px;
+display:flex;
+gap:10px;
+}
+.search input{
+background:none;
+border:0;
+outline:none;
+color:white;
+width:100%;
+font-size:14px;
+}
+.search input::placeholder{color:#c4cee0}
+.tabs{
+display:flex;
+justify-content:space-around;
+padding:19px 5px 12px;
+color:#9baac4;
+font-size:13px;
+}
+.tabs span.active{
+color:#5bc6ff;
+border-bottom:2px solid #5bc6ff;
+padding-bottom:9px;
+}
+.section{
+padding:15px 17px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.section h3{margin:0;font-size:16px}
+.section small{color:#5bc6ff}
+.chat{
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px 17px;
+border-bottom:1px solid #ffffff0b;
+}
+.avatar{
+width:53px;
+height:53px;
+border-radius:19px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:23px;
+background:linear-gradient(135deg,#3479d8,#7955d9);
+flex-shrink:0;
+}
+.info{flex:1;min-width:0}
+.name{
+font-size:14px;
+font-weight:bold;
+margin-bottom:9px;
+}
+.message{
+font-size:12px;
+color:#9baac4;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+.meta{
+text-align:left;
+font-size:10px;
+color:#8293ae;
+}
+.badge{
+margin-top:9px;
+background:#3979e9;
+border-radius:20px;
+padding:4px 7px;
+display:inline-block;
+color:white;
+}
+.fab{
+position:fixed;
+bottom:85px;
+left:20px;
+width:58px;
+height:58px;
+border:0;
+border-radius:20px;
+background:linear-gradient(135deg,#39b8ff,#6657f5);
+color:white;
+font-size:27px;
+box-shadow:0 7px 25px #2879e766;
+}
+nav{
+position:fixed;
+bottom:0;
+width:100%;
+background:#172236;
+display:flex;
+justify-content:space-around;
+padding:14px 5px 19px;
+border-top:1px solid #ffffff12;
+}
+nav div{
+text-align:center;
+color:#8c9bb4;
+font-size:11px;
+}
+nav b{
+display:block;
+font-size:20px;
+margin-bottom:5px;
+}
+nav .selected{color:#54c4ff}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="top">
+<button class="icon">☰</button>
+<div class="logo">TELEGRAM-<span>X</span></div>
+<button class="icon">✎</button>
+</div>
+
+<div class="search">
+<span>⌕</span>
+<input id="search" placeholder="جستجوی پیام، مخاطب و گروه...">
+</div>
+</header>
+
+<div class="tabs">
+<span class="active">همه</span>
+<span>شخصی</span>
+<span>گروه‌ها</span>
+<span>کانال‌ها</span>
+</div>
+
+<div class="section">
+<h3>گفت‌وگوها</h3>
+<small>مشاهده همه ←</small>
+</div>
+
+<div id="chats">
+
+<div class="chat">
+<div class="avatar">🤖</div>
+<div class="info">
+<div class="name">TELEGRAM-X</div>
+<div class="message">به پیام‌رسان جدید خوش آمدید!</div>
+</div>
+<div class="meta">آنلاین</div>
+</div>
+
+<div class="chat">
+<div class="avatar">👨🏻</div>
+<div class="info">
+<div class="name">دوست من</div>
+<div class="message">سلام، حالت چطوره؟</div>
+</div>
+<div class="meta">۱۲:۳۰<div class="badge">۲</div></div>
+</div>
+
+<div class="chat">
+<div class="avatar">👥</div>
+<div class="info">
+<div class="name">گروه دوستان</div>
+<div class="message">علی: فردا همدیگر را می‌بینیم</div>
+</div>
+<div class="meta">دیروز</div>
+</div>
+
+<div class="chat">
+<div class="avatar">🚀</div>
+<div class="info">
+<div class="name">اخبار فناوری</div>
+<div class="message">جدیدترین اخبار دنیای تکنولوژی</div>
+</div>
+<div class="meta">۱۱:۲۰</div>
+</div>
+
+</div>
+
+<button class="fab" onclick="newChat()">＋</button>
+
+<nav>
+<div class="selected"><b>☷</b>پیام‌ها</div>
+<div><b>♧</b>مخاطبین</div>
+<div><b>◉</b>تماس‌ها</div>
+<div><b>⚙</b>تنظیمات</div>
+</nav>
+
+<script>
+document.getElementById('search').addEventListener('input',function(){
+const value=this.value.trim().toLowerCase();
+document.querySelectorAll('.chat').forEach(chat=>{
+chat.style.display=chat.innerText.toLowerCase().includes(value)?'flex':'none';
+});
+});
+
+function newChat(){
+alert('بخش گفت‌وگوی جدید در مرحله بعد ساخته می‌شود.');
+}
+</script>
+
+</body>
+</html>
